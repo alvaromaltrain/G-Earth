@@ -3,6 +3,7 @@ package gearth.app.protocol.connection.proxy.nitro.os;
 import gearth.app.misc.OSValidator;
 import gearth.app.protocol.connection.proxy.nitro.os.macos.NitroMacOS;
 import gearth.app.protocol.connection.proxy.nitro.os.windows.NitroWindows;
+import gearth.app.protocol.connection.proxy.nitro.os.unix.NitroUnix;
 
 public final class NitroOsFunctionsFactory {
 
@@ -12,7 +13,7 @@ public final class NitroOsFunctionsFactory {
         }
 
         if (OSValidator.isUnix()) {
-            throw new UnsupportedOperationException("unix nitro is not implemented yet");
+            return new NitroUnix();
         }
 
         if (OSValidator.isMac()) {
